@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+  }
+
+  .device-light {
+    background-color: #c9c9c9;
+    box-shadow:
+      inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+      inset -1px -1px 2px rgba(0, 0, 0, 0.1),
+      10px 10px 30px rgba(0, 0, 0, 0.15),
+      -5px -5px 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .device-dark {
+    background-color: #4a4a4c;
+    box-shadow:
+      inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+      inset -1px -1px 2px rgba(0, 0, 0, 0.3),
+      5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-tactile {
+    background-color: #c4c4c4;
+    box-shadow:
+      0px 4px 4px -1px rgba(0, 0, 0, 0.6),
+      0px 2px 1px rgba(0, 0, 0, 0.8),
+      inset 0px 1.5px 1px rgba(255, 255, 255, 0.9),
+      inset 1.5px 0px 1px rgba(255, 255, 255, 0.6),
+      inset 0px -1px 1px rgba(0, 0, 0, 0.15),
+      inset -1px 0px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #999;
+    transition: all 0.05s ease;
+  }
+
+  .btn-tactile:active, .btn-tactile.active {
+    transform: translateY(3px);
+    box-shadow:
+      0px 1px 1px rgba(0, 0, 0, 0.4),
+      inset 0px 3px 4px rgba(0, 0, 0, 0.3),
+      inset 1px 0px 3px rgba(0, 0, 0, 0.2);
+    background-color: #bcbcbc;
+  }
+
+  .btn-tactile-orange {
+    background-color: #f96302;
+    box-shadow:
+      0px 4px 4px -1px rgba(0, 0, 0, 0.6),
+      0px 2px 1px rgba(0, 0, 0, 0.8),
+      inset 0px 1.5px 1px rgba(255, 255, 255, 0.6),
+      inset 1.5px 0px 1px rgba(255, 255, 255, 0.4),
+      inset 0px -1px 1px rgba(0, 0, 0, 0.2),
+      inset -1px 0px 1px rgba(0, 0, 0, 0.15);
+    border: 1px solid #c74d00;
+    color: white;
+    transition: all 0.05s ease;
+  }
+
+  .btn-tactile-orange:active {
+    transform: translateY(3px);
+    box-shadow:
+      0px 1px 1px rgba(0, 0, 0, 0.4),
+      inset 0px 3px 4px rgba(0, 0, 0, 0.3),
+      inset 1px 0px 3px rgba(0, 0, 0, 0.2);
+    background-color: #e85d02;
+  }
+  
+  .btn-tactile-dark {
+    background-color: #3a3a3c;
+    box-shadow:
+      0px 4px 4px -1px rgba(0, 0, 0, 0.7),
+      0px 2px 1px rgba(0, 0, 0, 0.9),
+      inset 0px 1.5px 1px rgba(255, 255, 255, 0.2),
+      inset 1.5px 0px 1px rgba(255, 255, 255, 0.1),
+      inset 0px -1px 1px rgba(0, 0, 0, 0.4),
+      inset -1px 0px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #1c1c1d;
+    color: #a0a0a0;
+    transition: all 0.05s ease;
+  }
+
+  .btn-tactile-dark:active {
+    transform: translateY(3px);
+    box-shadow:
+      0px 1px 1px rgba(0, 0, 0, 0.5),
+      inset 0px 3px 4px rgba(0, 0, 0, 0.5),
+      inset 1px 0px 3px rgba(0, 0, 0, 0.4);
+    background-color: #323234;
+  }
+
+  .screen-recessed {
+    background-color: #b8b8b8;
+    box-shadow:
+      inset 3px 3px 6px rgba(0, 0, 0, 0.15),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+  }
+  
+  .screen-inner {
+    background-color: #d0d0d0;
+    box-shadow:
+      inset 1px 1px 3px rgba(0, 0, 0, 0.1),
+      inset -1px -1px 3px rgba(255, 255, 255, 0.4);
+  }
+
+  .slider-track {
+    background-color: #111;
+    box-shadow:
+      inset 2px 2px 5px rgba(0, 0, 0, 0.8),
+      inset -1px -1px 2px rgba(255, 255, 255, 0.2),
+      1px 1px 1px rgba(255, 255, 255, 0.5);
+  }
+
+  .slider-knob {
+    background-color: #c4c4c4;
+    border: 1px solid #999;
+    box-shadow:
+      2px 4px 6px rgba(0, 0, 0, 0.4),
+      inset 0 2px 2px rgba(255, 255, 255, 0.9),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .screw-head {
+    background-color: #555;
+    box-shadow: 
+      inset 1px 1px 2px rgba(0,0,0,0.6),
+      inset -1px -1px 2px rgba(255,255,255,0.2),
+      0.5px 0.5px 1px rgba(255,255,255,0.1);
+  }
+
+  /* Analog Scrollbar */
+  .analog-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #c4c4c4 rgba(0, 0, 0, 0.15);
+  }
+
+  .analog-scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 
+      inset 0 0 0 1px #999,
+      inset 0 2px 1px 1px rgba(255, 255, 255, 0.9),
+      inset 0 -1px 1px 1px rgba(0, 0, 0, 0.3),
+      inset 1px 0 1px 1px rgba(255, 255, 255, 0.5),
+      inset -1px 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-thumb:vertical {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 4px,
+      rgba(0,0,0,0.15) 4px,
+      rgba(0,0,0,0.15) 5px
+    );
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-thumb:horizontal {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 4px,
+      rgba(0,0,0,0.15) 4px,
+      rgba(0,0,0,0.15) 5px
+    );
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #d0d0d0;
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-thumb:active {
+    background-color: #b0b0b0;
+    box-shadow: 
+      inset 0 0 0 1px #999,
+      inset 0 1px 2px 1px rgba(0, 0, 0, 0.3),
+      inset 0 -1px 1px 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .analog-scrollbar::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  /* Engraved Text Labels */
+  .engraved-text {
+    color: #777;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.4);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .engraved-icon {
+    color: #777;
+    filter: drop-shadow(0px 1px 0px rgba(255,255,255,0.4));
+  }
+
+  /* Hardware LEDs */
+  .led {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.6), 0 1px 1px rgba(255,255,255,0.3);
+    background-color: #222;
+    transition: all 0.1s ease;
+  }
+
+  .led.red.on { background-color: #ff3333; box-shadow: 0 0 8px #ff3333, inset 1px 1px 2px rgba(255,255,255,0.6); }
+  .led.green.on { background-color: #33ff33; box-shadow: 0 0 8px #33ff33, inset 1px 1px 2px rgba(255,255,255,0.6); }
+  .led.orange.on { background-color: #ff9900; box-shadow: 0 0 8px #ff9900, inset 1px 1px 2px rgba(255,255,255,0.6); }
+
+  /* Screen Effects */
+  @keyframes flicker {
+    0% { opacity: 0.98; }
+    50% { opacity: 0.96; }
+    100% { opacity: 0.98; }
+  }
+  .screen-on { animation: flicker 0.1s infinite; }
+  .screen-off { 
+    background-color: #111 !important; 
+    border-color: #000 !important; 
+    box-shadow: inset 2px 2px 15px #000 !important; 
+  }
+  .screen-off > * { opacity: 0; transition: opacity 0.2s; }
+}
